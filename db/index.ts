@@ -1,9 +1,9 @@
-import { env } from "cloudflare:workers";
 import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
+import { getRuntimeBindings } from "./runtime";
 
-export function getDb() {
-  const bindings = env as unknown as { DB?: D1Database };
+export function getD1() {
+  const bindings = getRuntimeBindings();
 
   if (!bindings.DB) {
     throw new Error(
@@ -11,5 +11,9 @@ export function getDb() {
     );
   }
 
-  return drizzle(bindings.DB, { schema });
+  return bindings.DB;
+}
+
+export function getDb() {
+  return drizzle(getD1(), { schema });
 }

@@ -31,6 +31,9 @@ const localBindingConfig = {
         },
       ]
     : [],
+  vars: {
+    ADMIN_EMAILS: process.env.ADMIN_EMAILS ?? "",
+  },
 };
 
 export default defineConfig(async () => {
