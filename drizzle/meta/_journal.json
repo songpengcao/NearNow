@@ -1,5 +1,20 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1785327236472,
+      "tag": "0000_initial_event_catalog",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1785327414263,
+      "tag": "0001_seed_barcelona_20260729",
+      "breakpoints": true
+    }
+  ]
 }

@@ -123,7 +123,10 @@ function categoryFor(name: string) {
   return "Concert" as const;
 }
 
-function accentFor(name: string, category: ReturnType<typeof categoryFor>) {
+function accentFor(
+  name: string,
+  category: NonNullable<ManualMetadata["category"]>,
+) {
   const normalized = name.toLowerCase();
   if (category === "Classical") return "classical" as const;
   if (category === "Electronic") return "club" as const;
